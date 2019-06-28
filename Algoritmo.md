@@ -14,6 +14,6 @@
    - Ela deve jogar no centro se disponivél;
    - Jogar nas quinas se disponivél;
    - Por fim, nas diagonais.
-9. 
+9. Informar quem ganhou ou se houve empate.
 
 
