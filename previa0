@@ -1,0 +1,44 @@
+#Jogo da velha
+
+def mostralinha():
+    print("--------------------------------------")
+mostralinha()
+print("           JOGO DA VELHA      ")
+mostralinha()
+
+#Introdução
+
+nome = input("Digite seu nome, por favor:")
+print("Seja Bem-Vindo", nome)
+mostralinha()
+print("          RERGRAS DO JOGO")
+print("1. Escolha quem irá começar o jogo;")
+print("2. Na sua vez de jogar, escolhar uma linha do tabuleiro; ")
+print("3. E em seguida escolha uma coluna.")
+mostralinha()
+
+print("O jogo irá começar!")
+
+# Matriz 3x3
+
+matriz = [[" "," ", " "],
+          [" "," "," "],
+          [" "," "," "]]
+def mostramatriz(matriz):
+    for linha in matriz:
+       print(linha)
+
+
+# Quem irá jogar de novo
+
+def primjog():
+    if usuario == "Sim" or usuario == "sim":
+        print("Você é o jogador 1 e o seu símbolo é x.")
+        print("A máquina é o jogador 2 e o símbolo é o")
+    elif usuario == "Não" or usuario == "Nao" or usuario == "nao" or usuario == "não":
+        print("A máquina é o jogador 1 e o símbolo é x")
+        print("Você é o jogador 2 e o seu é o.")
+    else:
+        raise ValueError
+usuario = input("Você quer ser o primeiro a jogar? (Sim/Não)")
+primjog()
