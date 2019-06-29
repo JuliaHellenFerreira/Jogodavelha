@@ -9,7 +9,6 @@
    - Fazer um laço para quando o usuário digitar uma posição já ocupada.
 6. Um subprograma para a  para máquina;
 7. Estratégia para máquina jogar:
-* Condicional para escolher algumas das formas de jogar;
    - Tentar ganhar; (Subprograma)
    - Se defender; (Subprograma)
    - Jogar as suas estratégia para ganhar; (Subprograma)
@@ -19,6 +18,15 @@
 9. Fazer um (while) com os números de jogas e um contador para vitória;
 10. Verificar se a máquina ganhou ou se houve empate;
 
+*Problemas para resolver*
+ - Colocar quem será o primeiro a jogar;
+ - Criar uma hierarquia para as estratégias da máquina jogar;
+ - Encerrar o jogo
+   - Vitória da máquina;
+   - Empate do jogo.
+   
+   *Sugestões* 
+    - Criar um subprograma para estética do jogo.
 
 
   
