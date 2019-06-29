@@ -36,9 +36,36 @@ def primjog():
         print("Você é o jogador 1 e o seu símbolo é x.")
         print("A máquina é o jogador 2 e o símbolo é o")
     elif usuario == "Não" or usuario == "Nao" or usuario == "nao" or usuario == "não":
-        print("A máquina é o jogador 1 e o símbolo é x")
-        print("Você é o jogador 2 e o seu é o.")
+        print("A máquina é o jogador 1 e o símbolo é o")
+        print("Você é o jogador 2 e o seu é x.")
     else:
         raise ValueError
 usuario = input("Você quer ser o primeiro a jogar? (Sim/Não)")
 primjog()
+
+# Jogando
+
+## Jogadas do usuário
+
+def usuario(matriz):
+    if matriz[linhas][colunas] == " ":
+        matriz[i][j] = "x"
+        print("Sua jogada foi:")
+    else:
+        print("Posição inválida")
+        mostramatriz(matriz)
+
+# Jogo
+
+vitoria = False
+cont = 0
+
+while cont < 9 or vitoria:
+    for i in range(len(matriz)):
+        for j in range(len(matriz)):
+            linhas = int(input("Digite a linha desejada:"))
+            colunas = int(input("Digite a coluna desejada:"))
+            usuario(matriz)
+            mostramatriz(matriz)
+            cont = cont +1
+print("FIM DE JOGO")
