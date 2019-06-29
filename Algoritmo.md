@@ -16,6 +16,7 @@
    - Jogar nas quinas se disponivél;
    - Por fim, nas diagonais.
 9. Fazer um (while) com os números de jogas e um contador para vitória;
-10. Informar quem ganhou ou se houve empate.
+10. Verificar se a máquina ganhou ou se houve empate;
+
 
 
