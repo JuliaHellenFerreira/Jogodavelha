@@ -9,6 +9,7 @@
    - Fazer um laço para quando o usuário digitar uma posição já ocupada.
 6. Um subprograma para a  para máquina;
 7. Estratégia para máquina jogar:
+* Condicional para escolher algumas das formas de jogar;
    - Tentar ganhar; (Subprograma)
    - Se defender; (Subprograma)
    - Jogar as suas estratégia para ganhar; (Subprograma)
