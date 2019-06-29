@@ -14,8 +14,7 @@
    - Jogar as suas estratégia para ganhar; (Subprograma)
 8. Estratégia ganhar:
    - Ela deve jogar no centro se disponivél;
-   - Jogar nas quinas se disponivél;
-   - Por fim, nas diagonais.
+   - Jogar nas quinas se disponivél.
 9. Fazer um (while) com os números de jogas e um contador para vitória;
 10. Verificar se a máquina ganhou ou se houve empate;
 
