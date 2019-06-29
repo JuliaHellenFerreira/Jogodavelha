@@ -54,15 +54,54 @@ def usuario(matriz):
     else:
         print("Posição inválida")
         mostramatriz(matriz)
-        
+#######################################################################################################################################
+
  ## Jogadas da máquina
 
 def maquina(matriz):
-# Tentar ganhar do usuário:
+### Tentar ganhar do usuário:
     for i in range(len(matriz)):
         for j in range(len(matriz)):
+##### Centro
             if matriz[1][1] == " ":
                 matriz[1][1] = "o"
+##### Linhas
+            elif matriz[i][0] == "o" and matriz[i][1] == "o":
+                if matriz[i][2] == " ":
+                    matriz[i][2] = "o"
+            elif matriz[i][1] == "x" and matriz[i][2] == "x":
+                if matriz[i][0] == " ":
+                    matriz[i][0] = "o"
+            elif matriz[i][0] == "o" and matriz [i][2] == "o":
+                if matriz[i][1] ==" ":
+                    matriz[i][1] = "o"
+##### Colunas
+            elif matriz[0][j] == "o" and matriz[1][j] == "o":
+                if matriz[2][j] == " ":
+                    matriz[2][j] = "o"
+            elif matriz[1][j] == "o" and matriz[2][j] == "o":
+                if matriz[0][j] == " ":
+                    matriz[0][j] = "o"
+            elif matriz [0][j] == "o" and matriz[2][j] == "o":
+                if matriz[1][j] == " ":
+                    matriz[1][j] = "o"
+##### Diagonais
+            elif matriz[1][1] == "o" and matriz[2][2] == "o":
+                if matriz [0][0] == " ":
+                    matriz[0][0] = "o"
+            elif matriz[0][0] == "o" and matriz[1][1] == "o":
+                if matriz [2][2] == " ":
+                    matriz[2][2] = "o"
+            elif matriz[0][2] == "o" and matriz[1][1] == "o":
+                if matriz [2][0] == " ":
+                    matriz[2][0] = "o"
+            elif matriz[1][1] == "o" and matriz[2][0] == "o":
+                if matriz [0][2] == " ":
+                    matriz[0][2] = "o"
+            print("A máquina jogou:")
+
+### Se defender da possivél vitória do usuário:
+
             elif matriz[i][0] == "x" and matriz[i][1] == "x":
                 if matriz[i][2] == " ":
                     matriz[i][2] = "o"
@@ -72,6 +111,7 @@ def maquina(matriz):
             elif matriz[i][0] == "x" and matriz [i][2] == "x":
                 if matriz[i][1] ==" ":
                     matriz[i][1] = "o"
+##### Colunas
             elif matriz[0][j] == "x" and matriz[1][j] == "x":
                 if matriz[2][j] == " ":
                     matriz[2][j] = "o"
@@ -81,21 +121,33 @@ def maquina(matriz):
             elif matriz [0][j] == "x" and matriz[2][j] == "x":
                 if matriz[1][j] == " ":
                     matriz[1][j] = "o"
+##### Diagonais
+            elif matriz[1][1] == "x" and matriz[2][2] == "x":
+                if matriz [0][0] == " ":
+                    matriz[0][0] = "o"
+            elif matriz[0][0] == "x" and matriz[1][1] == "x":
+                if matriz [2][2] == " ":
+                    matriz[2][2] = "o"
+            elif matriz[0][2] == "x" and matriz[1][1] == "x":
+                if matriz [2][0] == " ":
+                    matriz[2][0] = "o"
+            elif matriz[1][1] == "x" and matriz[2][0] == "x":
+                if matriz [0][2] == " ":
+                    matriz[0][2] = "o"
             print("A máquina jogou:")
-# Se defender da possivél vitória do usuário:
-# Jogar nas diagonais:
-############################################################## ERRO ##################################################################
-    if matriz[0][0] == " ":
-        matriz[0][0] = "o"
-    elif matriz[0][2] ==" ":
-        matriz[0][2] = "o"
-    elif matriz[2][0] == " ":
-        matriz[2][0] = "o"
-    elif matriz[2][2] == " ":
-        matriz[2][2] = "o"
-    print("A máquina jogou")
-######################################################################################################################################
 
+
+### Jogar nas diagonais:
+            elif matriz[0][0] == " ":
+                 matriz[0][0] = "o"
+            elif matriz[0][2] ==" ":
+                matriz[0][2] = "o"
+            elif matriz[2][0] == " ":
+                matriz[2][0] = "o"
+            elif matriz[2][2] == " ":
+                matriz[2][2] = "o"
+            print("A máquina jogou")
+########################################################################################################################################
 # Jogo
 
 vitoria = False
