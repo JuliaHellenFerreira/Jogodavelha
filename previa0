@@ -58,8 +58,8 @@ def usuario(matriz):
 
  ## Jogadas da máquina
 
-def maquina(matriz):
 ### Tentar ganhar do usuário:
+def ganhar(matriz):
     for i in range(len(matriz)):
         for j in range(len(matriz)):
 ##### Centro
@@ -98,11 +98,12 @@ def maquina(matriz):
             elif matriz[1][1] == "o" and matriz[2][0] == "o":
                 if matriz [0][2] == " ":
                     matriz[0][2] = "o"
-            print("A máquina jogou:")
 
 ### Se defender da possivél vitória do usuário:
-
-            elif matriz[i][0] == "x" and matriz[i][1] == "x":
+def defesa(matriz):
+    for i in range(len(matriz)):
+        for j in range(len(matriz)):
+            if matriz[i][0] == "x" and matriz[i][1] == "x":
                 if matriz[i][2] == " ":
                     matriz[i][2] = "o"
             elif matriz[i][1] == "x" and matriz[i][2] == "x":
@@ -134,19 +135,25 @@ def maquina(matriz):
             elif matriz[1][1] == "x" and matriz[2][0] == "x":
                 if matriz [0][2] == " ":
                     matriz[0][2] = "o"
-            print("A máquina jogou:")
-
-
 ### Jogar nas diagonais:
-            elif matriz[0][0] == " ":
-                 matriz[0][0] = "o"
-            elif matriz[0][2] ==" ":
-                matriz[0][2] = "o"
-            elif matriz[2][0] == " ":
-                matriz[2][0] = "o"
-            elif matriz[2][2] == " ":
-                matriz[2][2] = "o"
-            print("A máquina jogou")
+
+
+def diagonais(matriz):
+    if matriz[0][0] == " ":
+        matriz[0][0] = "o"
+    elif matriz[0][2] ==" ":
+        matriz[0][2] = "o"
+    elif matriz[2][0] == " ":
+        matriz[2][0] = "o"
+    elif matriz[2][2] == " ":
+        matriz[2][2] = "o"
+
+def maquina(matriz):
+    ganhar(matriz)
+    defesa(matriz)
+    diagonais(matriz)
+    print("A máquina jogou")
+
 ########################################################################################################################################
 # Jogo
 
