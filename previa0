@@ -55,23 +55,46 @@ def usuario(matriz):
         print("Posição inválida")
         mostramatriz(matriz)
         
- ## Jogadas da Máquina
+ ## Jogadas da máquina
 
- def maquina(matriz):
- # Tentar ganhar do usuário:
-    if matriz[1][1] == " ":
-        matriz[1][1] = "o"
- # Se defender de uma possível vitória do usuário:
- # Jogar nas diagonais:
-    elif matriz [0][0] == " ":
+def maquina(matriz):
+# Tentar ganhar do usuário:
+    for i in range(len(matriz)):
+        for j in range(len(matriz)):
+            if matriz[1][1] == " ":
+                matriz[1][1] = "o"
+            elif matriz[i][0] == "x" and matriz[i][1] == "x":
+                if matriz[i][2] == " ":
+                    matriz[i][2] = "o"
+            elif matriz[i][1] == "x" and matriz[i][2] == "x":
+                if matriz[i][0] == " ":
+                    matriz[i][0] = "o"
+            elif matriz[i][0] == "x" and matriz [i][2] == "x":
+                if matriz[i][1] ==" ":
+                    matriz[i][1] = "o"
+            elif matriz[0][j] == "x" and matriz[1][j] == "x":
+                if matriz[2][j] == " ":
+                    matriz[2][j] = "o"
+            elif matriz[1][j] == "x" and matriz[2][j] == "x":
+                if matriz[0][j] == " ":
+                    matriz[0][j] = "o"
+            elif matriz [0][j] == "x" and matriz[2][j] == "x":
+                if matriz[1][j] == " ":
+                    matriz[1][j] = "o"
+            print("A máquina jogou:")
+# Se defender da possivél vitória do usuário:
+# Jogar nas diagonais:
+############################################################## ERRO ##################################################################
+    if matriz[0][0] == " ":
         matriz[0][0] = "o"
-    elif matriz [0][2] ==" ":
+    elif matriz[0][2] ==" ":
         matriz[0][2] = "o"
     elif matriz[2][0] == " ":
         matriz[2][0] = "o"
-    elif matriz[2][0] == " ":
+    elif matriz[2][2] == " ":
         matriz[2][2] = "o"
-    print("A máquina jogou:")
+    print("A máquina jogou")
+######################################################################################################################################
 
 # Jogo
 
