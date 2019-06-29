@@ -5,6 +5,7 @@
 3. Fazer um subprograma para estruturar as linhas e colunas;
 4. Opção para quem deseja jogar primeiro;
 5. Subprograma para as jogadas do usuário;
+  - Obs: acrescentar uma condicional para ver quem joga primeiro.
 6. Um subprograma para a  para máquina;
 7. Estratégia para máquina jogar:
    - Tentar ganhar; (Subprograma)
