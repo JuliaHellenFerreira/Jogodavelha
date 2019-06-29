@@ -7,6 +7,8 @@
 5. Subprograma para as jogadas do usuário;
    - Obs: acrescentar uma condicional para ver quem joga primeiro.
 6. Um subprograma para a  para máquina;
+
+   *Erro: a maquina não joga quando ocupam o espaço livre quando temos outro ocupado*
 7. Estratégia para máquina jogar:
    - Tentar ganhar; (Subprograma)
    - Se defender; (Subprograma)
@@ -20,3 +22,4 @@
 
 
 
+  
