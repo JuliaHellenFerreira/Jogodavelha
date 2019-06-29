@@ -25,7 +25,7 @@
    - Empate do jogo.
    
    *Sugestões* 
-   - Criar um subprograma para estética do jogo.
+ - Criar um subprograma para estética do jogo.
 
 
   
