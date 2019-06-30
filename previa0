@@ -21,9 +21,10 @@ print("O jogo irá começar!")
 
 # Matriz 3x3
 
-matriz = [[" "," ", " "],
+matriz = [[" "," "," "],
           [" "," "," "],
           [" "," "," "]]
+
 def mostramatriz(matriz):
     for linha in matriz:
        print(linha)
@@ -49,18 +50,16 @@ primjog()
 
 def usuario(matriz):
     if matriz[linhas][colunas] == " ":
-        matriz[i][j] = "x"
+        matriz[linhas][colunas] = "x"
         print("Sua jogada foi:")
     else:
-        print("Posição inválida")
-        mostramatriz(matriz)
-#######################################################################################################################################
+        print("Posição inválida!")
+    mostramatriz(matriz)
 
 ## Jogadas da máquina
 
 ### Tentar ganhar do usuário:
 #Definir contador para jogada
-gan = 0 
 def ganhar(matriz):
     global gan
     for i in range(len(matriz)):
@@ -102,13 +101,9 @@ def ganhar(matriz):
             elif matriz[1][1] == "o" and matriz[2][0] == "o":
                 if matriz [0][2] == " ":
                     matriz[0][2] = "o"
-                    # Incremento
-gan += 1
-
 
 ### Se defender da possivél vitória do usuário:
 # Definir o contador para defesa
-den = 0
 def defesa(matriz):
     global den
     for i in range(len(matriz)):
@@ -135,9 +130,6 @@ def defesa(matriz):
                 if matriz[1][j] == " ":
                     matriz[1][j] = "o"
 ##### Diagonais
-            elif matriz[1][1] == "x" and matriz[2][2] == "x":
-                if matriz [0][0] == " ":
-                    matriz[0][0] = "o"
             elif matriz[0][0] == "x" and matriz[1][1] == "x":
                 if matriz [2][2] == " ":
                     matriz[2][2] = "o"
@@ -147,12 +139,9 @@ def defesa(matriz):
             elif matriz[1][1] == "x" and matriz[2][0] == "x":
                 if matriz [0][2] == " ":
                     matriz[0][2] = "o"
-den += 1
 ### Jogar nas diagonais:
 # Definir contador
-dia = 0
 def diagonais(matriz):
-    global dia
     if matriz[0][0] == " ":
         matriz[0][0] = "o"
     elif matriz[0][2] ==" ":
@@ -161,32 +150,27 @@ def diagonais(matriz):
         matriz[2][0] = "o"
     elif matriz[2][2] == " ":
         matriz[2][2] = "o"
-dia += 1
 
 def maquina(matriz):
     print("Hum, deixe me pensar na minha jogada...")
     print("Já sei onde vou jogar!")
-    if gan != 0:
-        ganhar(matriz)
-    elif den != 0:
-        defesa(matriz)
-    elif dia !=0:
-        diagonais(matriz)
+    ganhar(matriz)
+    defesa(matriz)
+    diagonais(matriz)
     mostramatriz(matriz)
     print("Agora é a sua vez!")
 
-########################################################################################################################################
 # Jogo
 
 vitoria = False
 cont = 0
-
-while cont < 9 or vitoria:
+while cont < 4 or vitoria:
     for i in range(len(matriz)):
         for j in range(len(matriz)):
             linhas = int(input("Digite a linha desejada:"))
             colunas = int(input("Digite a coluna desejada:"))
             usuario(matriz)
-            mostramatriz(matriz)
-            cont = cont +1
+            maquina(matriz)
+            cont +=1
 print("FIM DE JOGO")
+
