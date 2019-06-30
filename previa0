@@ -59,7 +59,7 @@ def usuario(matriz):
 ## Jogadas da máquina
 
 ### Tentar ganhar do usuário:
-#Definir contador para jogada
+
 def ganhar(matriz):
     global gan
     for i in range(len(matriz)):
@@ -103,7 +103,7 @@ def ganhar(matriz):
                     matriz[0][2] = "o"
 
 ### Se defender da possivél vitória do usuário:
-# Definir o contador para defesa
+
 def defesa(matriz):
     global den
     for i in range(len(matriz)):
@@ -140,7 +140,7 @@ def defesa(matriz):
                 if matriz [0][2] == " ":
                     matriz[0][2] = "o"
 ### Jogar nas diagonais:
-# Definir contador
+
 def diagonais(matriz):
     if matriz[0][0] == " ":
         matriz[0][0] = "o"
@@ -150,6 +150,19 @@ def diagonais(matriz):
         matriz[2][0] = "o"
     elif matriz[2][2] == " ":
         matriz[2][2] = "o"
+### Jogadas simples
+
+def simples(matriz):
+    if matriz[0][1] == " ":
+        matriz[0][1] = "o"
+    elif matriz[1][0] == " ":
+        matriz[1][0] = "o"
+    elif matriz[1][2] == " ":
+        matriz[1][2] = "o"
+    elif matriz[2][1] == " ":
+        matriz[2][1] = "o"
+
+# Todas as funções juntas
 
 def maquina(matriz):
     print("Hum, deixe me pensar na minha jogada...")
@@ -157,6 +170,7 @@ def maquina(matriz):
     ganhar(matriz)
     defesa(matriz)
     diagonais(matriz)
+    simples(matriz)
     mostramatriz(matriz)
     print("Agora é a sua vez!")
 
@@ -164,7 +178,7 @@ def maquina(matriz):
 
 vitoria = False
 cont = 0
-while cont < 4 or vitoria:
+while (cont < 9) or vitoria:
     for i in range(len(matriz)):
         for j in range(len(matriz)):
             linhas = int(input("Digite a linha desejada:"))
@@ -173,4 +187,3 @@ while cont < 4 or vitoria:
             maquina(matriz)
             cont +=1
 print("FIM DE JOGO")
-
